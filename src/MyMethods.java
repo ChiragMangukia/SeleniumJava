@@ -3,6 +3,7 @@ import java.io.IOException;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 
 public class MyMethods {	
 	
@@ -11,6 +12,13 @@ public class MyMethods {
 		System.setProperty("webdriver.chrome.driver", filePath.getPath());
 		WebDriver driver = new ChromeDriver();
 		return driver;
+	}
+	
+	public static WebDriver edge() {		
+		File fileEdge = new File("Binaries", "MicrosoftWebDriver.exe");
+		System.setProperty("webdriver.edge.driver", fileEdge.getPath());
+		WebDriver driverEdge = new EdgeDriver();
+		return driverEdge;
 	}
 	
 	public static void killProcess() throws IOException {
